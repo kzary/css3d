@@ -35,7 +35,7 @@ body {
   border: 1px solid black;
   transform-style: preserve-3d;
   perspective: 500px;
-  animation: animate 1.5s linear infinite 0.5s, in 0.5s;
+  animation: animate 1.5s linear infinite 0.5s, glow 2s linear infinite, in 0.5s;
 }
 .front {
   transform: rotateY(0deg) translateZ(150px);
@@ -66,17 +66,25 @@ body {
   border: 0.5px solid aqua;
   transform-style: preserve-3d;
   perspective: 500px;
-  animation: animate s linear infinite 1s, in 1s;
+  animation: animate s linear infinite 1s, glow 2s linear infinite, in 1s;
 }
 .grid span.active {
   background: aqua;
   z-index: 999;
   box-shadow: 0 0 15px aqua;
-  animation: animate 3s linear infinite 1.5s, in 1.5s;
+  animation: animate 3s linear infinite 1.5s, glow 2s linear infinite, in 1.5s;
 }
 @keyframes in {
   to {
     transform: opacity(1);
+  }
+}
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 50px aqua;
+  }
+  50% {
+    box-shadow: 0 0 3px aqua;
   }
 }
 @keyframes animate {
