@@ -11,6 +11,7 @@ body {
   min-height: 100vh;
   background-color: #1a1a1a;
   perspective: 1000px;
+  overflow-y: hidden;
 }
 .background {
   position: relative;
